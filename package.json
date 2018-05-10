@@ -1,0 +1,12 @@
+{
+    "name": "NodeYNAD",
+    "version": "1.0.0",
+    "description": "My examproject in NodeJS called YNAD",
+    "dependencies": {
+        "mysql": "2.15.0",
+        "express": "^4.15.2",
+        "express-formidable": "1.0.0",
+        "body-parser": "^1.18.2",
+        "socket.io": "2.0.4"
+    }
+}
