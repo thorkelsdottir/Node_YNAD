@@ -1,9 +1,41 @@
-.footerToolbar {
-    background-color: transparent;
-    height: 165px;
-    color: rgba(0,0,0,.87);
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    align-items: center;
+.footer {
+    background-color: #f9fdff;
+    border-top: 1px solid $lineBlue;
+    .footerToolbar {
+        height: 165px;
+        color: rgba($black, 0.87);
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        align-items: center;
+        margin: 0 auto;
+        .footer-newsletter {
+            input {
+                width: 480px;
+                height: 38px;
+                border: 1px solid $lineBlue;
+                margin-top: 10px;
+                outline: none;
+                text-indent: 10px;
+            }
+            input::-webkit-input-placeholder {
+                text-indent: 10px;
+            }
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 47px;
+            p {
+                font-size: 14px;
+            }
+            .footer-social-media {
+               a {
+                margin: 0 20px;
+               }
+            }
+        }
+    }
 }
+

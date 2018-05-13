@@ -2,11 +2,14 @@
 $white: #FFFFFF;
 $black: #000000;
 $darkBlue: #283849;
+$hoverBlue: #384C61;
 $lightBlue: #8091A5;
+$lineBlue: #E9EFF4;
 $grey: #4A4A4A;
 $lightGrey: #DFE6EE;
 $pink: #FFBCBC;
-$lineBlue:#E9EFF4;
+$admin: #F9fdff;
+
 /* *** *** *** Font *** *** *** */
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,300i,400,600,700,900');
 $fontTitilli: 'Titillium Web', sans-serif;
@@ -16,13 +19,15 @@ $fontRegular: 400;
 $fontSemiBold: 600;
 $fontBold: 700;
 $fontBlack: 900; 
+
 /* *** *** *** Zero *** *** *** */
 *{
     margin: 0;
     padding: 0;
 }
+
 /* *** *** *** Header *** *** *** */
-h1{
+h1, .h1{
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
     font-size: 40px;
@@ -30,14 +35,14 @@ h1{
     letter-spacing: 0;
     line-height: 50px;
 }
-h2{
+h2, .h2{
     font-family: $fontTitilli;
     font-weight: $fontExtraLight;
     font-size: 22px;
     color: $grey;
     letter-spacing: 0;
 }
-h3{
+h3, .h3{
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
     font-size: 22px;
@@ -45,14 +50,14 @@ h3{
     letter-spacing: -0.41px;
     line-height: 50px;
 }
-h4{
+h4, .h4{
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
     font-size: 16px;
     color: $darkBlue;
     letter-spacing: 0;
 }
-h5{
+h5, .h5{
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
     font-size: 14px;
@@ -60,7 +65,7 @@ h5{
     letter-spacing: -0.26px;
     line-height: 20px;
 }
-p{
+p, .p{
     font-family: $fontTitilli;
     font-weight: $fontLight;
     font-size: 20px;
@@ -68,7 +73,11 @@ p{
     letter-spacing: 0;
     line-height: 32px;
 }
-.like {
+button {
+    outline: none;
+    border: none;
+}
+.like{
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
     font-size: 12px;
@@ -76,12 +85,15 @@ p{
     letter-spacing: 1px;
     margin-left: 11px;
     &::before{
+        // content: url('blackCarrot.png');
         width: 14px;
         margin-right: 11px;
     }
 }
+
 /* *** *** *** Buttons *** *** *** */
 .btnNone{
+    margin: 0 40px;
     border: none;
     text-transform: uppercase;
     font-family: $fontTitilli;
@@ -90,10 +102,11 @@ p{
     color: $lightBlue;
     letter-spacing: 1px;
     text-align: center;
-    margin: 0 40px;
+    text-decoration: none;
 }
-
 .btnDark{
+    width: 140px;
+    height: 40px;
     background: $darkBlue;
     color: $white;
     text-transform: uppercase;
@@ -103,10 +116,11 @@ p{
     color: $white;
     letter-spacing: 0;
     text-align: center;
-    height: 40px;
-    width: 140px;
+    text-decoration: none;
 }
 .btnLight{
+    width: 140px;
+    height: 40px;
     border: 1px solid $lightGrey;
     text-transform: uppercase;
     font-family: $fontTitilli;
@@ -115,10 +129,10 @@ p{
     color: $darkBlue;
     letter-spacing: 0;
     text-align: center;
-    height: 40px;
-    width: 140px;
+    text-decoration: none;
 }
 .btnWhite{
+    height: 50px;
     text-transform: uppercase;
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
@@ -127,9 +141,10 @@ p{
     letter-spacing: 1;
     background-color: transparent;
     border: 1px solid $white;
-    height: 50px;
+    text-decoration: none;
 }
 .btnAdminDark{
+    height: 40px;
     width: 219px;
     height: 60px;
     font-family: $fontTitilli;
@@ -138,28 +153,34 @@ p{
     color: $white;
     letter-spacing: 0;
     text-align: center;
+    background-color: $darkBlue;
+    border-left: 1px solid $hoverBlue;
+    &:hover {
+        background-color: $hoverBlue;
+    }
 }
 .btnLogo{
     padding: 0;
-    outline: none;
 }
+
 .divWhiteBox{
     max-width: 1125px;
     background: #FFFFFF;
     box-shadow: 4px 6px 20px 0 rgba(49,86,126,0.08);
 }
+
 .lineLeft{
     border-left: 1px solid $lightBlue;
-    img {
+    img{
         margin-left: 40px;
         margin-right: 10px;
     }
 }
+
 .logo{
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: 6px;
     img {
         width: 130px;
     }
 }
-

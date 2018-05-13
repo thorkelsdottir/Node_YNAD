@@ -1,33 +1,17 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var io = require('socket.io')(5000);
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
+jChat = {};
 
-io.on('connection', function(socket){
-  console.log('a user connected');
-});
+jChat.getChat = function() {
+    //doo stuff with req and send with res
+    io.on('connection', function(socket){
+        socket.on('chat message', function(jData){
+            // VISIBLE IN TERMINAL
+            // console.log("Put in chat: " + jData); 
+            // SENDS TO EVERYONE
+            io.emit('chat message', jData);
+        });
+    });
+}
 
- 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
-  });
-});
-
-io.emit('some event', { for: 'everyone' });
-
-io.on('connection', function(socket){
-  socket.broadcast.emit('hi');
-});
-
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
-
-
-
+module.exports = jChat;

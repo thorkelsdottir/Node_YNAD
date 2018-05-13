@@ -1,3 +1,9 @@
+@charset "UTF-8";
+/*
+  *** Author: Katrin D. Sigurðardóttir
+  *** Date: April 2018
+*/
+/*====================================================*/
 /* *** *** *** Colors *** *** *** */
 /* *** *** *** Font *** *** *** */
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web:200,300,300i,400,600,700,900");
@@ -7,7 +13,7 @@
   padding: 0; }
 
 /* *** *** *** Header *** *** *** */
-h1 {
+h1, .h1 {
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
   font-size: 40px;
@@ -15,14 +21,14 @@ h1 {
   letter-spacing: 0;
   line-height: 50px; }
 
-h2 {
+h2, .h2 {
   font-family: "Titillium Web", sans-serif;
   font-weight: 200;
   font-size: 22px;
   color: #4A4A4A;
   letter-spacing: 0; }
 
-h3 {
+h3, .h3 {
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
   font-size: 22px;
@@ -30,14 +36,14 @@ h3 {
   letter-spacing: -0.41px;
   line-height: 50px; }
 
-h4 {
+h4, .h4 {
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
   font-size: 16px;
   color: #283849;
   letter-spacing: 0; }
 
-h5 {
+h5, .h5 {
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -45,13 +51,17 @@ h5 {
   letter-spacing: -0.26px;
   line-height: 20px; }
 
-p {
+p, .p {
   font-family: "Titillium Web", sans-serif;
   font-weight: 300;
   font-size: 20px;
   color: #000000;
   letter-spacing: 0;
   line-height: 32px; }
+
+button {
+  outline: none;
+  border: none; }
 
 .like {
   font-family: "Titillium Web", sans-serif;
@@ -66,6 +76,7 @@ p {
 
 /* *** *** *** Buttons *** *** *** */
 .btnNone {
+  margin: 0 40px;
   border: none;
   text-transform: uppercase;
   font-family: "Titillium Web", sans-serif;
@@ -74,9 +85,11 @@ p {
   color: #8091A5;
   letter-spacing: 1px;
   text-align: center;
-  margin: 0 40px; }
+  text-decoration: none; }
 
 .btnDark {
+  width: 140px;
+  height: 40px;
   background: #283849;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -86,10 +99,11 @@ p {
   color: #FFFFFF;
   letter-spacing: 0;
   text-align: center;
-  height: 40px;
-  width: 140px; }
+  text-decoration: none; }
 
 .btnLight {
+  width: 140px;
+  height: 40px;
   border: 1px solid #DFE6EE;
   text-transform: uppercase;
   font-family: "Titillium Web", sans-serif;
@@ -98,10 +112,10 @@ p {
   color: #283849;
   letter-spacing: 0;
   text-align: center;
-  height: 40px;
-  width: 140px; }
+  text-decoration: none; }
 
 .btnWhite {
+  height: 50px;
   text-transform: uppercase;
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
@@ -110,9 +124,10 @@ p {
   letter-spacing: 1;
   background-color: transparent;
   border: 1px solid #FFFFFF;
-  height: 50px; }
+  text-decoration: none; }
 
 .btnAdminDark {
+  height: 40px;
   width: 219px;
   height: 60px;
   font-family: "Titillium Web", sans-serif;
@@ -120,11 +135,14 @@ p {
   font-size: 12px;
   color: #FFFFFF;
   letter-spacing: 0;
-  text-align: center; }
+  text-align: center;
+  background-color: #283849;
+  border-left: 1px solid #384C61; }
+  .btnAdminDark:hover {
+    background-color: #384C61; }
 
 .btnLogo {
-  padding: 0;
-  outline: none; }
+  padding: 0; }
 
 .divWhiteBox {
   max-width: 1125px;
@@ -138,14 +156,16 @@ p {
     margin-right: 10px; }
 
 .logo {
-  margin-left: 10px;
+  margin-left: 20px;
   margin-top: 6px; }
   .logo img {
     width: 130px; }
 
+/*====================================================*/
+/*====================================================*/
 .headerToolbar {
   background: #FFFFFF;
-  width: 100%;
+  width: 99%;
   height: 100px;
   box-shadow: 0 2px 10px 0 rgba(128, 145, 165, 0.08);
   display: flex;
@@ -160,22 +180,12 @@ p {
     overflow: hidden; }
     .headerToolbar .navbar-items .navbar-signin-signup {
       display: flex;
-      flex-flow: row;
-      justify-content: space-between;
-      align-items: center;
-      margin-right: 20px; }
+      flex-flow: row; }
       .headerToolbar .navbar-items .navbar-signin-signup button {
         margin: 0 5px; }
 
-.footerToolbar {
-  background-color: transparent;
-  height: 165px;
-  color: rgba(0, 0, 0, 0.87);
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  align-items: center; }
-
+/*====================================================*/
+/*====================================================*/
 .front-page {
   width: 100vw;
   background-image: url("/images/background/frontpage.png");
@@ -265,21 +275,279 @@ p {
               .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-work-info p img:first-child {
                 margin-left: 85px; }
   .front-page .front-instagram {
-    width: 100%;
+    width: calc(100% - 120px);
     height: 350px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 100px 0; }
+    padding: 100px 60px; }
     .front-page .front-instagram h4 img {
       margin-right: 11px; }
     .front-page .front-instagram .front-instagram-list {
-      display: inline-flex; }
+      display: flex;
+      justify-content: space-around; }
       .front-page .front-instagram .front-instagram-list div {
-        margin: 10px 16px; }
+        margin: 10px 10px; }
         .front-page .front-instagram .front-instagram-list div:first-child {
           margin-left: 0; }
         .front-page .front-instagram .front-instagram-list div:last-child {
           margin-right: 0; }
+
+/*====================================================*/
+/*====================================================*/
+#signUp {
+  width: 100%;
+  background-color: rgba(40, 56, 73, 0.5);
+  padding-bottom: 85px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 100px; }
+
+#formSignUp {
+  width: 720px;
+  margin-top: 55px;
+  background-color: #FFFFFF; }
+  #formSignUp .formSignUp__header {
+    width: 100%;
+    height: 135px;
+    padding-top: 30px;
+    background-color: #F9FDFF;
+    position: relative; }
+    #formSignUp .formSignUp__header__close {
+      position: absolute;
+      top: 30px;
+      right: 30px; }
+    #formSignUp .formSignUp__header__logo {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      background-image: url("/images/logo/logoBox.svg");
+      background-repeat: no-repeat;
+      background-size: cover; }
+    #formSignUp .formSignUp__header h2 {
+      text-align: center;
+      font-size: 20px; }
+  #formSignUp .signUpForm {
+    width: 70%;
+    margin: 65px 15%; }
+  #formSignUp input {
+    width: 100%;
+    height: 35px;
+    margin: 14px 0;
+    border: none;
+    border-bottom: 1px solid #DFE6EE; }
+  #formSignUp textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #DFE6EE; }
+  #formSignUp .h5 {
+    font-weight: 400; }
+  #formSignUp .signUpTwoInLine {
+    width: 100%;
+    display: inline-flex; }
+    #formSignUp .signUpTwoInLine input {
+      width: 48%; }
+      #formSignUp .signUpTwoInLine input:first-child {
+        margin-right: 4%; }
+  #formSignUp button {
+    width: 100%;
+    margin-top: 25px; }
+
+/*====================================================*/
+/*====================================================*/
+.userChat {
+  font: 13px Helvetica, Arial;
+  background-color: #353535; }
+  .userChat .socketChat {
+    width: 80%;
+    height: 80vh;
+    position: relative;
+    margin-top: 6%;
+    margin-left: 10%;
+    background-color: white;
+    border-radius: 5px; }
+  .userChat form {
+    width: 100%;
+    padding: 3px;
+    position: absolute;
+    bottom: 0; }
+    .userChat form #m {
+      width: 75%;
+      border: 0;
+      padding: 10px;
+      margin-right: .5%; }
+    .userChat form #name {
+      border: 0;
+      padding: 10px;
+      width: 15%;
+      margin-right: .1%; }
+    .userChat form button {
+      width: 9%;
+      background: #C6A782;
+      border: none;
+      padding: 10px; }
+    .userChat form #messages {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      height: 95%;
+      overflow: auto;
+      vertical-align: bottom;
+      overflow-y: scroll; }
+      .userChat form #messages li {
+        padding: 12px 10px; }
+        .userChat form #messages li:nth-child(odd) {
+          background: #eee; }
+    .userChat form img {
+      width: 35px;
+      height: 35px;
+      display: block;
+      margin: 0 auto; }
+    .userChat form p {
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      margin: 0 auto; }
+
+/*====================================================*/
+/*====================================================*/
+.my-pieces-cards {
+  width: 90%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-self: center;
+  margin: 0 auto; }
+
+.piece-card {
+  width: 281px;
+  height: fit-content;
+  background: #FFFFFF;
+  box-shadow: 0 2px 10px 0 rgba(128, 145, 165, 0.08);
+  margin-bottom: 26px;
+  margin: 1%; }
+  .piece-card p {
+    font-size: 14px; }
+  .piece-card .piece-card-image {
+    width: 100%; }
+  .piece-card .piece-card-content .card-title-price {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center; }
+    .piece-card .piece-card-content .card-title-price h3 {
+      font-size: 16px;
+      line-height: 1; }
+  .piece-card .piece-card-content .card-line {
+    height: 1px;
+    width: 100%;
+    background-color: #E9EFF4; }
+  .piece-card .piece-card-content span {
+    color: #FFBCBC; }
+
+/*====================================================*/
+/*====================================================*/
+.footer {
+  background-color: #f9fdff;
+  border-top: 1px solid #E9EFF4; }
+  .footer .footerToolbar {
+    height: 165px;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    margin: 0 auto; }
+    .footer .footerToolbar .footer-newsletter input {
+      width: 480px;
+      height: 38px;
+      border: 1px solid #E9EFF4;
+      margin-top: 10px;
+      outline: none;
+      text-indent: 10px; }
+    .footer .footerToolbar .footer-newsletter input::-webkit-input-placeholder {
+      text-indent: 10px; }
+    .footer .footerToolbar .footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 47px; }
+      .footer .footerToolbar .footer-nav p {
+        font-size: 14px; }
+      .footer .footerToolbar .footer-nav .footer-social-media a {
+        margin: 0 20px; }
+
+/*====================================================*/
+/*====================================================*/
+.admin-page {
+  width: 100vw;
+  background: #F9fdff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 100px; }
+  .admin-page .front-artist {
+    width: 100%;
+    height: 800px; }
+    .admin-page .front-artist .divWhiteBox {
+      height: 700px;
+      margin: 0 auto; }
+      .admin-page .front-artist .divWhiteBox .user-social {
+        margin-left: 70px;
+        margin-bottom: 40px;
+        width: 180px;
+        display: flex;
+        justify-content: space-between; }
+      .admin-page .front-artist .divWhiteBox .user-info {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 70px;
+        margin-right: 70px; }
+        .admin-page .front-artist .divWhiteBox .user-info .user-email-phone {
+          width: 340px;
+          display: flex;
+          justify-content: space-between; }
+          .admin-page .front-artist .divWhiteBox .user-info .user-email-phone .user-email, .admin-page .front-artist .divWhiteBox .user-info .user-email-phone .user-phone {
+            display: flex; }
+            .admin-page .front-artist .divWhiteBox .user-info .user-email-phone .user-email p, .admin-page .front-artist .divWhiteBox .user-info .user-email-phone .user-phone p {
+              text-indent: 10px;
+              font-size: 15px; }
+      .admin-page .front-artist .divWhiteBox .front-artist-intro {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        display: inline-flex; }
+        .admin-page .front-artist .divWhiteBox .front-artist-intro .front-artist-info {
+          max-width: 350px;
+          margin-top: 60px;
+          margin-left: 70px; }
+          .admin-page .front-artist .divWhiteBox .front-artist-intro .front-artist-info p {
+            font-size: 16px;
+            line-height: 26px; }
+        .admin-page .front-artist .divWhiteBox .front-artist-intro .front-artist-images {
+          width: 800px;
+          height: 504px;
+          background-image: url("/images/artists/minervaBrown.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: absolute;
+          top: -40px;
+          right: -160px; }
+
+/*====================================================*/
+/*====================================================*/
+.admin-header {
+  width: 100%;
+  background: #283849;
+  height: 60px; }
+  .admin-header .admin-navbar-items {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end; }
+
+/*====================================================*/
 
 /*# sourceMappingURL=style.css.map */
