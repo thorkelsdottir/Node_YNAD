@@ -104,7 +104,7 @@ button {
     text-align: center;
     text-decoration: none;
 }
-.btnDark{
+.btnDark {
     width: 140px;
     height: 40px;
     background: $darkBlue;
@@ -143,16 +143,17 @@ button {
     border: 1px solid $white;
     text-decoration: none;
 }
-.btnAdminDark{
-    height: 40px;
+.btnAdminDark{    
     width: 219px;
     height: 60px;
+    line-height: 60px;
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
-    font-size: 12px;
+    font-size: 13px;
     color: $white;
     letter-spacing: 0;
     text-align: center;
+    text-decoration: none;
     background-color: $darkBlue;
     border-left: 1px solid $hoverBlue;
     &:hover {

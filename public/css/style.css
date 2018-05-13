@@ -127,15 +127,16 @@ button {
   text-decoration: none; }
 
 .btnAdminDark {
-  height: 40px;
   width: 219px;
   height: 60px;
+  line-height: 60px;
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
   color: #FFFFFF;
   letter-spacing: 0;
   text-align: center;
+  text-decoration: none;
   background-color: #283849;
   border-left: 1px solid #384C61; }
   .btnAdminDark:hover {
@@ -353,63 +354,103 @@ button {
 
 /*====================================================*/
 /*====================================================*/
-.userChat {
-  font: 13px Helvetica, Arial;
-  background-color: #353535; }
-  .userChat .socketChat {
-    width: 80%;
-    height: 80vh;
-    position: relative;
-    margin-top: 6%;
-    margin-left: 10%;
-    background-color: white;
-    border-radius: 5px; }
-  .userChat form {
-    width: 100%;
-    padding: 3px;
-    position: absolute;
-    bottom: 0; }
-    .userChat form #m {
-      width: 75%;
-      border: 0;
-      padding: 10px;
-      margin-right: .5%; }
-    .userChat form #name {
-      border: 0;
-      padding: 10px;
-      width: 15%;
-      margin-right: .1%; }
-    .userChat form button {
-      width: 9%;
-      background: #C6A782;
-      border: none;
+.admin-chat {
+  width: 100vw;
+  background: #F9fdff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px; }
+  .admin-chat .userChat {
+    width: 60%;
+    margin: 0 auto;
+    padding: 1px;
+    box-shadow: 4px 6px 20px 0 rgba(128, 145, 165, 0.08);
+    background: #E9EFF4; }
+    .admin-chat .userChat .socketChat ul {
+      background: #FFFFFF;
+      height: 300px;
+      overflow: scroll;
       padding: 10px; }
-    .userChat form #messages {
+    .admin-chat .userChat form {
+      background: #dfe6ee;
+      border: 1px solid #dfe6ee;
+      width: 100%;
+      margin: 0 auto; }
+    .admin-chat .userChat .chat-form {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      height: 100px; }
+      .admin-chat .userChat .chat-form .chat-inputs {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%; }
+        .admin-chat .userChat .chat-form .chat-inputs .nameInput input {
+          width: 300px;
+          padding: 10px;
+          outline: none;
+          margin-left: 20px;
+          font-size: 14px; }
+        .admin-chat .userChat .chat-form .chat-inputs .messageInput input {
+          width: 450px;
+          padding: 10px;
+          margin-right: 20px;
+          outline: none;
+          font-size: 14px; }
+        .admin-chat .userChat .chat-form .chat-inputs input::-webkit-input-placeholder {
+          color: #8091A5; }
+      .admin-chat .userChat .chat-form .chat-info-send {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px; }
+        .admin-chat .userChat .chat-form .chat-info-send p {
+          font-size: 16px; }
+    .admin-chat .userChat #messages {
       list-style-type: none;
       margin: 0;
-      padding: 0;
-      height: 95%;
-      overflow: auto;
-      vertical-align: bottom;
-      overflow-y: scroll; }
-      .userChat form #messages li {
-        padding: 12px 10px; }
-        .userChat form #messages li:nth-child(odd) {
-          background: #eee; }
-    .userChat form img {
-      width: 35px;
-      height: 35px;
+      padding: 0; }
+    .admin-chat .userChat #messages li {
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: #283849;
+      background-color: #E9EFF4;
+      max-width: 600px;
+      width: fit-content;
+      position: relative;
+      margin: 15px 10px;
+      word-break: break-all; }
+    .admin-chat .userChat #messages li:nth-child(odd) {
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: #283849;
+      background-color: #E9EFF4;
+      max-width: 600px;
+      width: fit-content;
+      position: relative;
+      margin: 15px 10px;
+      word-break: break-all; }
+    .admin-chat .userChat #messages li:after {
+      content: "";
+      width: 20px;
+      height: 12px;
       display: block;
-      margin: 0 auto; }
-    .userChat form p {
-      color: white;
-      text-align: center;
-      font-size: 16px;
+      background-image: url("/images/icon/icon-gray-message.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
       position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      margin: 0 auto; }
+      bottom: -2px;
+      left: -5px; }
+    .admin-chat .userChat .hide {
+      display: none; }
+    .admin-chat .userChat .show {
+      display: block; }
 
 /*====================================================*/
 /*====================================================*/
