@@ -14,6 +14,7 @@ app.use(bodyParser());
 const sHeaderHTML = gFs.readFileSync( __dirname + '/html/header.html', 'utf8');
 const sFooterHTML = gFs.readFileSync( __dirname + '/html/footer.html', 'utf8');
 const chatFile = require(__dirname + '/chat.js');
+const sendSmsFile = require(__dirname + '/send-sms.js');
 const UserFile = require(__dirname + '/users.js');
 chatFile.getChat();
 
@@ -77,6 +78,17 @@ app.get('/admin-chat', (req, res) => {
     var sAdminHeaderHTML = gFs.readFileSync( __dirname + '/html/admin/admin-header.html', 'utf8');
     var sChatHTML = gFs.readFileSync( __dirname + '/html/admin/admin-chat.html', 'utf8');
     res.send(sHeaderHTML + sAdminHeaderHTML + sChatHTML + sFooterHTML);
+});
+
+/* *** *** Add User *** *** */
+app.post('/send-sms-to-user', (req, res) => {
+    sendSmsFile.sendSmsData(req, res);
+});
+
+/* *** *** Send sms *** *** */
+app.get('/send-sms', (req, res) => {
+    var sSendSmsHTML = gFs.readFileSync( __dirname + '/html/send-sms.html', 'utf8');
+    res.send(sHeaderHTML + sSendSmsHTML + sFooterHTML);
 });
 
 

@@ -27,15 +27,34 @@
             <input class="h5" placeholder="Profession" name="user[profession]">
             
             <textarea id="" cols="30" rows="10" class="h5" placeholder="Description" name="user[description]"></textarea>
-            <!-- <input type='file' (change)="signUpImg($event)" name="profile_image">
-            <img [src]="formImage"> -->
-            <!-- <button id="btnSignUp" type="submit" >Login</button> -->
+            
+            <input type="file" id="imgInp" class="custom-file-input">
+            <img class="user_image_upload" id="blah" src="images/icon/imagePlaceholder.jpg" alt="your image" />
+
             <button type="button" id="btnSignUpFacebook" class="btnLight">Sign up USING FACEBOOK</button>
             <button type="button" id="btnSignUp" class="btnDark">Login</button>
         </form>
     </div>
 </div>
 <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+            }
+            }
+
+            $("#imgInp").change(function() {
+            readURL(this);
+        });
+
+
+
     var formSerialized = $('#signUpForm').serialize();
     $('#btnSignUp').click(function() {
         console.log(formSerialized);
