@@ -1,88 +1,127 @@
-.my-pieces-cards {
-    width: 90%;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-self: center;
+.my-pieces {
+background-color: $admin;
+padding-top: 50px;
+.my-pieces-title {
+    width: 50%;
     margin: 0 auto;
-    .card {
-        background-color: #fff;
-        margin-bottom: 1.6rem;
-        width: 282px;
-        height: fit-content;
-        .card__image {
-            min-height: 100px;
-            background-color: #eee;
-          }
-          .card__image img {
+    h2 {
+        font-size: 40px;
+        font-weight: 600;
+        width: 70%;
+        color: $darkBlue;
+        margin: 0 auto;
+    }
+    .my-pieces-search {
+        margin: 0 auto;
+        margin: 10% 0;
+        display: flex;
+        flex: row;
+        justify-content: space-between;
+        align-items: center;
+        input {
             width: 100%;
-            max-width: 100%;
-            display: block;
-          }
-          
-      }
-    .radius {
-        border-radius: 2px;
-        .border-tlr-radius {
-            border-top-left-radius: 2px;
-            border-top-right-radius: 2px;
+            height: 60px;
+            border: 1px solid $lineBlue;
+            margin: 0 auto;
+            outline: none;
+            text-indent: 20px;
+            font-family: $fontTitilli;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: -0.26px;
+        }
+        input::-webkit-input-placeholder {
+            text-indent: 20px;
+            color: $inputText;
         }
     }
-    .shadowDepth1 {
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    }
-    .card__padding {
-        padding: 0.8rem;
-    }  
-    .card__content {
-        position: relative;
-        .piece-card-content {
-            .piece-card-media {
-                    font-size: 12px;
-                    font-weight: 600;
-                    color: $lightBlue;
+}
+    .my-pieces-cards {
+        width: 86%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-self: center;
+        margin: 0 auto;
+        .card {
+            background-color: #fff;
+            margin-bottom: 1.6rem;
+            width: 282px;
+            height: fit-content;
+            .card__image {
+                min-height: 100px;
+                background-color: #eee;
             }
-            .piece-card-title {
-                    font-size: 14px;
-                    line-height: 18px;
-                    margin: 0 0 20px 0;
-            }
-            .piece-card-artistPrice {
-                display: flex;
-                flex-flow: row;
-                justify-content: space-between;
-                align-items: center;
-                margin: 0 0 10px 0;
-                h3 {
-                    font-size: 18px;
-                    line-height: 1;
-                }
-            }
-            .piece-card-materialSize {
-                display: flex;
-                flex-flow: row;
-                justify-content: space-between;
-                align-items: center;
-                margin: 10px 0;
-                p {
-                    font-size: 12px;
-                    line-height: 1;
-                }
-            }
-            .card-line {
-                height: 1px;
+            .card__image img {
                 width: 100%;
-                background-color: $lineBlue;
-                margin: 10px 0;
+                max-width: 100%;
+                display: block;
             }
-            span {
-                color: $pink;
-                margin-left: 6px;
-                font-size: 14px;
-                font-weight: 600;
+            
+        }
+        .radius {
+            border-radius: 2px;
+            .border-tlr-radius {
+                border-top-left-radius: 2px;
+                border-top-right-radius: 2px;
             }
         }
-    }   
+        .shadowDepth1 {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+        .card__padding {
+            padding: 0.8rem;
+        }  
+        .card__content {
+            position: relative;
+            .piece-card-content {
+                .piece-card-media {
+                        font-size: 12px;
+                        font-weight: 600;
+                        color: $lightBlue;
+                }
+                .piece-card-title {
+                        font-size: 14px;
+                        line-height: 18px;
+                        margin: 0 0 20px 0;
+                }
+                .piece-card-artistPrice {
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 0 0 10px 0;
+                    h3 {
+                        font-size: 18px;
+                        line-height: 1;
+                    }
+                }
+                .piece-card-materialSize {
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 10px 0;
+                    p {
+                        font-size: 12px;
+                        line-height: 1;
+                    }
+                }
+                .card-line {
+                    height: 1px;
+                    width: 100%;
+                    background-color: $lineBlue;
+                    margin: 10px 0;
+                }
+                span {
+                    color: $pink;
+                    margin-left: 6px;
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+        }   
+    }  
 }
 
 
