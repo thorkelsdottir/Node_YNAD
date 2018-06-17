@@ -1,0 +1,58 @@
+<section id="signUp">
+    <div id="formSignUp">
+        <div class="formSignUp__header">
+            <a href="/" class="formSignUp__header__close btnNone">close</a>
+            <div class="formSignUp__header__logo"></div>
+            <h2>Sign up to Young Nordic Artists & Designers</h2>
+        </div>
+        <form id="signUpForm" class="signUpForm" method="POST" action="/sign-up">                
+            <div class="signUpTwoInLine">
+                <input class="h5" placeholder="Firstname" name="firstname">
+                <input class="h5" placeholder="Lastname" name="lastname">
+            </div>
+            <input class="h5" placeholder="Email" name="email">
+            <input class="h5" placeholder="Password" name="password">
+            <input class="h5" placeholder="Phone Number" name="phone_number">
+            <select id="location" name="location" class='h5 mySelect'></select>
+            <input class="h5" placeholder="Instagram url" name="instagram_url">
+            <input class="h5" placeholder="Facebook url" name="facebook_url">
+            <input class="h5" placeholder="Twitter url" name="twitter_url">
+            <input class="h5" placeholder="Profession" name="profession">
+            
+            <textarea cols="30" rows="10" class="h5" placeholder="Description" name="description"></textarea>
+            
+            <input type="file" id="imgInp" class="custom-file-input" name="profile_image">
+            <img class="user_image_upload" id="user-image-upload" src="images/icon/imagePlaceholder.jpg" alt="your image"/>
+            <input class="h5" placeholder="Enter images url" name="profile_image">
+                  
+            <button type="button" id="btnSignUpFacebook" class="btnLight">Sign up USING FACEBOOK</button>
+            <button type="submit" id="btnSignUp" class="btnDark">SignUp</button>
+        </form>
+    </div>
+</section>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#user-image-upload').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imgInp").change(function() {
+        readURL(this);
+    });
+
+
+    $.get('/get-user-location', function(data){
+        $.each(data, function( key, value ) {
+            console.log('city: ' + value.city + ' | country: ' +value.country);
+            $('#location').append($("<option></option>")
+                .attr("value", value.idlocation)
+                .text(value.country + ', ' + value.city)); 
+        });
+    });
+</script>

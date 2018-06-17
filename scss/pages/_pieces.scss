@@ -1,41 +1,70 @@
 .my-pieces {
-background-color: $admin;
-padding-top: 50px;
-.my-pieces-title {
-    width: 50%;
-    margin: 0 auto;
-    h2 {
-        font-size: 40px;
-        font-weight: 600;
-        width: 70%;
-        color: $darkBlue;
+    background-color: $admin;
+    padding-top: 50px;
+    .my-pieces-title {
+        width: 50%;
         margin: 0 auto;
-    }
-    .my-pieces-search {
-        margin: 0 auto;
-        margin: 10% 0;
-        display: flex;
-        flex: row;
-        justify-content: space-between;
-        align-items: center;
-        input {
-            width: 100%;
-            height: 60px;
-            border: 1px solid $lineBlue;
+        h2 {
+            font-size: 40px;
+            font-weight: 600;
+            width: 70%;
+            color: $darkBlue;
             margin: 0 auto;
-            outline: none;
-            text-indent: 20px;
-            font-family: $fontTitilli;
-            font-size: 14px;
-            font-weight: 300;
-            letter-spacing: -0.26px;
         }
-        input::-webkit-input-placeholder {
-            text-indent: 20px;
-            color: $inputText;
+        .my-pieces-search {
+            margin: 0 auto;
+            margin: 10% 0;
+            display: flex;
+            flex: row;
+            justify-content: space-between;
+            align-items: center;
+            select:not([multiple]){
+                -webkit-appearance:none;
+                -moz-appearance:none;
+                background-position: 90%;
+                background-repeat:no-repeat;
+                background-image:url('/images/icon/selectArrowDown.svg');
+            }
+            #mySelect {
+                width: 160px;
+                height: 60px;
+                background-color: $white;
+                border: 1px solid $lineBlue;
+                color: $darkBlue; 
+                outline: none; 
+                border-radius: none;
+                font-family: "Titillium Web", sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: -0.26px;
+                text-indent: 20px;
+                border-radius:0;
+            }
+            input {
+                width: 100%;
+                height: 60px;
+                border: 1px solid $lineBlue;
+                margin: 0 auto;
+                outline: none;
+                text-indent: 20px;
+                font-family: $fontTitilli;
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: -0.26px;
+                margin-left: 10px;
+                border-radius: 2px;
+            }
+            input::-webkit-input-placeholder {
+                text-indent: 20px;
+                color: $inputText;
+            }
+            input {
+                background-position: 96%;
+                background-repeat:no-repeat;
+                background-image:url('/images/icon/searchIcon.svg');
+            }
         }
     }
-}
     .my-pieces-cards {
         width: 86%;
         display: flex;
@@ -67,7 +96,7 @@ padding-top: 50px;
             }
         }
         .shadowDepth1 {
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            box-shadow: 4px 6px 20px 0 rgba(49,86,126,0.08);            
         }
         .card__padding {
             padding: 0.8rem;
@@ -123,6 +152,3 @@ padding-top: 50px;
         }   
     }  
 }
-
-
-  

@@ -1,0 +1,63 @@
+<section id="addPiece">
+    <div id="formAddPiece" class="divWhiteBox">
+        <div class="formAddPiece__header">
+            <h1>Add Piece</h1>
+            <p>You can submit a piece and it will be approved or declined by the gallery curator within a week.</p>
+        </div>
+        <form id="addPieceForm" class="addPieceForm" method="POST" action="/add-piece">  
+            <input class="h5" placeholder="Title" name="title">
+            <input class="h5" placeholder="Material" name="material">  
+            <textarea cols="30" rows="10" class="h5" placeholder="Description" name="description"></textarea>
+            <input class="h5" placeholder="Size" name="size"> 
+            <input class="h5" placeholder="Price" name="price"> 
+            <select class="myaddSelect" name="dateCreated" id="dateCreated"></select> 
+            <select class="myaddSelect" name="pieceMedia" id="pieceMedia"></select>
+            <input class="h5" placeholder="Image url" name="piece_image"> 
+            <input onchange="readURL(this);" type="file" id="imgInp" class="custom-file-input" name="piece_image2">
+            <img class="user_image_upload" id="user-image-upload" src="images/icon/imagePlaceholder.jpg" alt="your image"/>
+ 
+            <button type="submit" id="btnSubmitPiece" class="btnDark">Admit Piece</button>
+        </form>
+    </div>
+</section>
+    <script>
+        $.get('/get-piece-date-created', function(data){
+            $.each(data, function( key, value ) {
+                // console.log('yearID: ' + value.idyear + ' | year: ' +value.year);
+                $('#dateCreated').append($("<option></option>")
+                    .attr("value", value.idyear)
+                    .text(value.year)); 
+            });
+        })
+        $.get('/get-piece-media', function(data){
+            $.each(data, function( key, value ) {
+                // console.log('idmedia: ' + value.idmedia + ' | media: ' +value.media);
+                $('#pieceMedia').append($("<option></option>")
+                    .attr("value", value.idmedia)
+                    .text(value.media)); 
+            });
+        })
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                $("#user-image-upload").attr("src", e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+            }
+
+
+        // $('#btnSubmitPiece').click(function() {
+        //     var formPieceSerialized = $('#addPieceForm').serialize();
+        //     console.log('html info: ', formPieceSerialized);
+        //     $.post('/submit-piece', formPieceSerialized, function(data){
+        //         console.log("data: ",data);
+        //         if(data.success == 'ok') {
+        //             console.log("her");
+        //         }
+        //     });
+        // });
+    </script>

@@ -1,0 +1,22 @@
+<section class="sendSms">
+    <div class="formSendSms">
+        <div class="formSignUp__header">
+            <a href="/" class="formSignUp__header__close btnNone">close</a>
+            <div class="formSignUp__header__logo"></div>
+            <h2>Send s sms to your friend</h2>
+        </div>
+        <form method="POST" action="/sms" class="signUpForm">
+            <div >
+            <div>
+                <input placeholder="Mobile number (8 numbers only Denmark)" class="h5" name="mobile" type="text" maxlength="8">
+            </div>
+            <div>
+                <textarea placeholder="Message (min 1 max 100 characters)" class="h5" name="message" maxlength="100" data-min="1"></textarea>
+            </div>
+            <button class="btnDark" id="btnSendSMS" type="submit">
+                SEND 
+            </button>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,6 +1,6 @@
 .admin-chat {
     width: 100vw;
-    background: $admin;
+    background-image: url('/images/background/pieces.png');
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 60px;
@@ -73,7 +73,7 @@
          padding: 10px 20px;
          border-radius: 25px;
          color: $darkBlue;
-         background-color: $lineBlue;
+         background-color: #e6e7ec;
          max-width: 600px;
          width: fit-content;
          position: relative;
@@ -85,7 +85,7 @@
          padding: 10px 20px;
          border-radius: 25px;
          color: $darkBlue;
-         background-color: $lineBlue;
+         background-color: #e6e7ec;
          max-width: 600px;
          width: fit-content;
          position: relative;

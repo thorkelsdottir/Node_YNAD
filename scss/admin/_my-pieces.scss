@@ -1,0 +1,66 @@
+.my-pieces{
+    width: 100%;
+    min-height: 80vh;
+    background-image: url('/images/background/pieces.png');
+    .pieces-table {
+        width: 80%;
+        padding-top: 30px;
+        margin-left: 10%;
+        padding-bottom: 4%;
+        table{
+            width: 90%;
+            margin-left: 5%;
+            background-color: $white;
+            border-collapse: collapse;
+            tr {
+                width: 100%;
+                &:nth-child(even) {
+                    background-color: $lightGrey;
+                }
+            }
+            th, td {
+                width: 12.5%;
+                padding: 10px 0;
+                text-align: left;
+                h5{
+                    font-size: 16px;
+                }
+                a{
+                    margin: 0 5px;                    
+                }
+            }
+            p {
+                font-size: 13px;
+                line-height: 20px;
+                width: 60px;
+            }
+        }
+    }
+}
+
+.pieces-status {
+        display: flex;
+    .status {
+        border-radius: 15px;
+        padding: 4px; 
+        width: 1px;
+        height: 1px; 
+        margin: 10px 0 10px 20px;
+    }
+    .approved {
+        background: $statusApproved;
+    }
+    .pending {
+        background: $statusPending;
+    }
+    .denied {
+        background: $statusDenied;
+    }
+}
+.piece-thumbnail{
+    img {
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+    }
+}

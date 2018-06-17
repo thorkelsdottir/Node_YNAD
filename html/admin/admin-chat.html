@@ -15,20 +15,18 @@
                     <p>Send us your name and query and we will reply shortly</p>
                     <button class="btnDark">Send Message</button>
                 </div>
-               
+                
             </form>
         </div>
     </div>
 </section>
-
-
+      
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
     $(function () {
         // Web Sockets run on port 5000 or any other port you want that is NOT port 80
         var socket = io("localhost:5000");
-
         $('form').submit(function(){
             //EMOJI (take the "C/C++/Java source code"): http://www.fileformat.info/info/unicode/char/1f60a/index.htm
             //CHANGE SYMBOLS TO EMOJI ICON [ :) // :-) // :( // :-( // :* // ? ]
@@ -54,20 +52,15 @@
                 theMessage = theMessage.replace(":*", "\uD83D\uDE18");
             }
             //console.log("New:" + theMessage);
-
             //SENDING THE CHAT
             var sMessage = user + ": " + theMessage;
             socket.emit('chat message', sMessage);
-
             // EMPTYING THE MESSAGE INPUT
             $('#m').val('');
-            
             //SCROLL TO BOTTOM SO YOU CAN SEE THE NEWSET MESSAGE
             $('#messages').animate({scrollTop: $('#messages').prop("scrollHeight")}, 500);
-
             return false;
         });
-
         //DISPLAYING IN CHAT
         socket.on('chat message', function(jData){
             $('#messages').append($('<li>').text(jData));
